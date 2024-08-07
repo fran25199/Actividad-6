@@ -1,1 +1,20 @@
-<p>newuser works!</p>
+<h2 class="mt-3 mb-3">NUEVO USUARIO</h2>
+<form [formGroup]="newUserForm" (ngSubmit)="getDataForm()">
+  <div class="mt-3 mb-3">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" name="nombre" id="nombre" formControlName="nombre" placeholder="Introduce el Nombre" />
+  </div>
+  <div class="mt-3 mb-3">
+    <label for="apellidos">Apellidos</label>
+    <input type="text" class="form-control"   formControlName="apellidos" id="apellidos" placeholder="Introduce los Apellidos" />
+  </div>
+  <div class="mt-3 mb-3">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" name="email" id="email" formControlName="email" placeholder="Introduce el Email" />
+  </div>
+  <div class="mt-3 mb-3">
+    <label for="url">Url Foto</label>
+    <input type="text" class="form-control" name="url" id="url" formControlName="url" placeholder="Introduce la Url de la Foto" />
+  </div>
+  <input type="submit" class="btn btn-danger" value="Guardar">
+</form>
