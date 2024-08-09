@@ -1,0 +1,5 @@
+.vertical-line {
+    border: none; /* Quitar el estilo de borde predeterminado */
+    border-left: 3px solid grey; /* Borde izquierdo que actúa como la línea vertical */
+    height: auto; /* Ajustar la altura de la línea vertical */
+  }
