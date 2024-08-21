@@ -1,23 +1,21 @@
 
-<div class="card rounded shadow m-5">
-    <div class="d-flex p-4">
-        <section class="m-5">
+<section class="row g-3">
+      <figure class="col-12 col-md-6 d-flex justify-content-center align-items-center vertical-line">
         <img
-          src="https://i.pravatar.cc/500?u=clemente.alonzomayorga@peticiones.online"
-          class="rounded-circle shadow"
+          [src]="specificUser.image"
+          class="rounded-circle img-fluid"
         />
-      </section>
-      <div class="vertical-line"></div>
-      <section class="m-5 d-flex flex-column gap-3">
-        <h2>Nombre</h2>
-        <h2>Appelidos</h2>
-        <div><span class="fw-bold">Nombre Usuario: </span><span>Pepe</span></div>
-        <div><span class="fw-bold">Email: </span><span>ffasdasd</span></div>
-        <div>
+      </figure>
+      <div  class="col-12 col-md-6 mx-auto">
+        <h2>{{specificUser.first_name}}</h2>
+        <h2>{{specificUser.last_name}}</h2>
+        <p class="fw-bold">Nombre Usuario: <span class="fw-normal">{{specificUser.username}}</span></p>
+        <p class="fw-bold">Email: <span class="fw-normal">{{specificUser.email}}</span> </p>
+        <div  class="col-12 col-md-8 d-flex gap-3">
           <a class="btn btn-danger">Eliminar</a>
           <a class="btn btn-danger" [routerLink]="['/updateuser']">Actualizarr</a>
           <a class="btn btn-danger" [routerLink]="['/home']">Volver al listado</a>
         </div>
-      </section></div>
+      </div>
+</section>
   
-</div>

@@ -1,10 +1,13 @@
 
 <section>
     <div class="row">
-        @for( user of arrUsuarios; track user.id){
+        @for( user of datos.results; track user.id){
         <article class="col-12 col-md-6 col-lg-4">
             <app-usercard [user]="user"></app-usercard>
         </article>
     }
     </div>
 </section>
+<div>
+    <app-navpage  [data]="datos" (page)="getPage($event)" class="d-flex justify-content-center"></app-navpage>
+</div>

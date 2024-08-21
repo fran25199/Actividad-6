@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { url } from 'inspector';
+import { UsuariosService } from '../../services/usuarios.service';
 
 @Component({
   selector: 'app-newuser',
@@ -10,6 +11,7 @@ import { url } from 'inspector';
   styleUrl: './newuser.component.css'
 })
 export class NewuserComponent {
+  newUserService = inject(UsuariosService);
   newUserForm!: FormGroup;
   constructor(){
     this.newUserForm = new FormGroup({
@@ -17,7 +19,7 @@ export class NewuserComponent {
       apellidos: new FormControl(null, []),
       email: new FormControl(null, []),
       url: new FormControl(null, []),
-    })
+    },[])
 
   }
 
@@ -25,6 +27,7 @@ export class NewuserComponent {
 
   getDataForm(){
     console.log(this.newUserForm.value)
+    
         //se enviaria la informacion al servicio.
         this.newUserForm.reset()
         // redirigir a otra seccion y cuando se vuelva a cargar estaria limpio.

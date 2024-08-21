@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderbarComponent } from "./components/headerbar/headerbar.component";
@@ -6,6 +6,8 @@ import { UserComponent } from './pages/user/user.component';
 import { NewuserComponent } from './pages/newuser/newuser.component';
 import { UpdateuserComponent } from './pages/updateuser/updateuser.component';
 import { Page404Component } from './pages/page404/page404.component';
+import { UsuariosService } from './services/usuarios.service';
+import { Idatos, Iuser } from './interfaces/iusuario.model';
 
 @Component({
   selector: 'app-root',
@@ -16,4 +18,15 @@ import { Page404Component } from './pages/page404/page404.component';
 })
 export class AppComponent {
   title = 'Actividad_6';
-}
+  datosService = inject(UsuariosService);
+  datos!: Idatos
+  
+  ngOnInit(){
+    this.datosService.getAll()
+    .then((datos)=> { this.datos = datos
+      console.log(datos);
+    })
+    .catch ((error)=> {console.log(error)})
+    }
+  }
+
