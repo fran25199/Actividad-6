@@ -17,6 +17,7 @@ export class HomeComponent {
   arrUsuarios!: Iusuario;
   datos!:Idatos
   page:string ="";
+  usersLoaded:boolean = false;
 
 ngOnInit(): void {
 this.getPage();
@@ -25,11 +26,11 @@ this.getPage();
     this.page = page;
     this.servicioUsuarios.getByPage(this.page)
     .then((datos)=> { this.datos = datos
+      this.usersLoaded = true;
     })
     .catch ((error)=> {console.log(error)})
 
   }
-
 }
 
 

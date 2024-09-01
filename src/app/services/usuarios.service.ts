@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { Idatos, Iuser, Iusuario } from '../interfaces/iusuario.model';
+import { Idatos, InewUser, Iuser, Iusuario } from '../interfaces/iusuario.model';
 import { USUARIOS } from '../db/ddbb.db';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
@@ -24,6 +24,16 @@ export class UsuariosService {
 
   getByPage (page:string) : Promise<Idatos>{
     return firstValueFrom(this.http.get<Idatos>(`${this.baseUrl}?page=${page}`))
+  }
+
+  deleteUser (id:string){
+    return firstValueFrom(this.http.delete<Iuser>(`${this.baseUrl}${id}`))
+  }
+  addUser(newUser:InewUser) : Promise<Iuser>{
+    return firstValueFrom(this.http.post<Iuser>(`${this.baseUrl}`, newUser));
+  }
+  updateUser(updateUser:InewUser, id:string) : Promise<Iuser>{
+    return firstValueFrom(this.http.put<Iuser>(`${this.baseUrl}${id}`, updateUser));
   }
 
 }

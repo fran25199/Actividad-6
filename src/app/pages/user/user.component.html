@@ -1,4 +1,4 @@
-
+@if(userLoaded){
 <section class="row g-3">
       <figure class="col-12 col-md-6 d-flex justify-content-center align-items-center vertical-line">
         <img
@@ -12,10 +12,11 @@
         <p class="fw-bold">Nombre Usuario: <span class="fw-normal">{{specificUser.username}}</span></p>
         <p class="fw-bold">Email: <span class="fw-normal">{{specificUser.email}}</span> </p>
         <div  class="col-12 col-md-8 d-flex gap-3">
-          <a class="btn btn-danger">Eliminar</a>
-          <a class="btn btn-danger" [routerLink]="['/updateuser']">Actualizarr</a>
+          <a class="btn btn-danger" (click)="deleteUser(specificUser)">Eliminar</a>
+          <a class="btn btn-danger" [routerLink]="['/updateuser',specificUser._id]">Actualizar</a>
           <a class="btn btn-danger" [routerLink]="['/home']">Volver al listado</a>
         </div>
       </div>
 </section>
+}
   

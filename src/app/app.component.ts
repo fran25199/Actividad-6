@@ -8,6 +8,7 @@ import { UpdateuserComponent } from './pages/updateuser/updateuser.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { UsuariosService } from './services/usuarios.service';
 import { Idatos, Iuser } from './interfaces/iusuario.model';
+import Swal from 'sweetalert';
 
 @Component({
   selector: 'app-root',

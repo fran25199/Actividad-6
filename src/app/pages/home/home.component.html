@@ -1,4 +1,4 @@
-
+@if(usersLoaded){
 <section>
     <div class="row">
         @for( user of datos.results; track user.id){
@@ -11,3 +11,4 @@
 <div>
     <app-navpage  [data]="datos" (page)="getPage($event)" class="d-flex justify-content-center"></app-navpage>
 </div>
+}

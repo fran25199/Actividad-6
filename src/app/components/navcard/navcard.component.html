@@ -7,11 +7,11 @@
             <i class="bi bi-search fs-1"></i>
             <span class="fs-5">Ver detalle</span>
         </div>
-        <div class="d-flex flex-column justify-content-center align-items-center" [routerLink]="['/updateuser']" >
+        <div class="d-flex flex-column justify-content-center align-items-center" [routerLink]="['/updateuser',user._id]" >
             <i class="bi bi-arrow-repeat fs-1"></i>
             <span class="fs-5">Actualizar</span>
         </div>
-        <div class="d-flex flex-column justify-content-center align-items-center" [routerLink]="['/home']">
+        <div class="d-flex flex-column justify-content-center align-items-center" (click)="deleteUser(user)" [routerLink]="['/home']">
             <i class="bi bi-trash fs-1"></i>
             <span class="fs-5">Borrar</span>
         </div>
