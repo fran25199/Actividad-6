@@ -26,7 +26,7 @@ export class UserComponent {
   ngOnInit(){
     this.activatedRoute.params.subscribe((params:any)=>{
       let id = params._id;
-      console.log(id);
+      //console.log(id); // muestra la captura del ID
       this.userService.getById(id)
       .then((user)=>{
         if ('error' in user) {

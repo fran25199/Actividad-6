@@ -2,7 +2,7 @@
 <form [formGroup]="newUserForm" (ngSubmit)="getDataForm()">
   <div class="mt-3 mb-3">
     <label for="nombre">Nombre</label>
-    <input type="text" class="form-control" name="first_name" id="first_name" formControlName="first_name" placeholder="Introduce el Nombre" />
+    <input [class.text-danger]="tipo==='Actualizar'" type="text" class="form-control" name="first_name" id="first_name" formControlName="first_name" placeholder="Introduce el Nombre" />
     @if(validateForm( "first_name","required")){
       <small class="text-danger">*Este campo es obligatorio</small>
     }
@@ -12,7 +12,7 @@
   </div>
   <div class="mt-3 mb-3">
     <label for="apellidos">Apellidos</label>
-    <input type="text" class="form-control"   formControlName="last_name" id="last_name" placeholder="Introduce los Apellidos" />
+    <input [class.text-danger]="tipo==='Actualizar'" type="text" class="form-control"   formControlName="last_name" id="last_name" placeholder="Introduce los Apellidos" />
     @if(validateForm( "last_name","required")){
       <small class="text-danger">*Este campo es obligatorio</small>
     }
@@ -22,7 +22,7 @@
   </div>
   <div class="mt-3 mb-3">
     <label for="email">Email</label>
-    <input type="text" class="form-control" name="email" id="email" formControlName="email" placeholder="Introduce el Email" />
+    <input [class.text-danger]="tipo==='Actualizar'" type="text" class="form-control" name="email" id="email" formControlName="email" placeholder="Introduce el Email" />
     @if(validateForm( "email","required")){
       <small class="text-danger">*Este campo es obligatorio</small>
     }
@@ -32,7 +32,7 @@
   </div>
   <div class="mt-3 mb-3">
     <label for="url">Url Foto</label>
-    <input type="text" class="form-control" name="image" id="image" formControlName="image" placeholder="Introduce la Url de la Foto" />
+    <input [class.text-danger]="tipo==='Actualizar'" type="text" class="form-control" name="image" id="image" formControlName="image" placeholder="Introduce la Url de la Foto" />
     @if(validateForm( "image","required")){
       <small class="text-danger">*Este campo es obligatorio</small>
     }

@@ -24,8 +24,9 @@ export class AppComponent {
   
   ngOnInit(){
     this.datosService.getAll()
-    .then((datos)=> { this.datos = datos
-      console.log(datos);
+    .then((datos)=> { 
+      this.datos = datos
+      //console.log(datos); // muestro la respuesta de la API
     })
     .catch ((error)=> {console.log(error)})
     }

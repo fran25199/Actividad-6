@@ -6,15 +6,15 @@
           class="rounded-circle img-fluid"
         />
       </figure>
-      <div  class="col-12 col-md-6 mx-auto">
+      <div  class="col-12 col-md-6 mx-auto align-items-center">
         <h2>{{specificUser.first_name}}</h2>
         <h2>{{specificUser.last_name}}</h2>
-        <p class="fw-bold">Nombre Usuario: <span class="fw-normal">{{specificUser.username}}</span></p>
-        <p class="fw-bold">Email: <span class="fw-normal">{{specificUser.email}}</span> </p>
-        <div  class="col-12 col-md-8 d-flex gap-3">
-          <a class="btn btn-danger" (click)="deleteUser(specificUser)">Eliminar</a>
-          <a class="btn btn-danger" [routerLink]="['/updateuser',specificUser._id]">Actualizar</a>
-          <a class="btn btn-danger" [routerLink]="['/home']">Volver al listado</a>
+        <p class="fw-bold fs-4">Nombre Usuario: <span class="fw-normal fs-5">{{specificUser.username}}</span></p>
+        <p class="fw-bold fs-4">Email: <span class="fw-normal fs-5">{{specificUser.email}}</span> </p>
+        <div  class="col-12 col-md-8 w-100 ">
+          <a class="btn btn-danger m-1" (click)="deleteUser(specificUser)">Eliminar</a>
+          <a class="btn btn-danger m-1" [routerLink]="['/updateuser',specificUser._id]">Actualizar</a>
+          <a class="btn btn-danger m-1" [routerLink]="['/home']">Volver al listado</a>
         </div>
       </div>
 </section>

@@ -67,8 +67,8 @@ export class NewuserComponent {
   }else{
     this.newUserService.updateUser(this.newUserForm.value, this.user._id)
     .then((message)=>{this.userUpdated = message
-      console.log(this.userUpdated);
-      console.log(this.user);
+      //console.log(this.userUpdated); //muestro los datos del Usuario actualizado
+      //console.log(this.user);// muestro los datos del Usuario pre Actualización
       this.alertService.successAlert("Modificación realizada", "Se han relalizado los cambios correctamente" , `/user/${this.userUpdated._id}`);
     })
     .catch((error)=>{console.log(error)

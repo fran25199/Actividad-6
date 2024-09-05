@@ -2,18 +2,18 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <!-- Container wrapper -->
-    <div class="container-fluid">
-        <div class="d-flex flex-column justify-content-center align-items-center" [routerLink]="['/user',user._id]">
+    <div class="container-fluid p-4">
+        <div class="d-flex flex-column justify-content-center align-items-center m" [routerLink]="['/user',user._id]">
             <i class="bi bi-search fs-1"></i>
-            <span class="fs-5">Ver detalle</span>
+            <span class="fs-6">Ver detalle</span>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-center" [routerLink]="['/updateuser',user._id]" >
             <i class="bi bi-arrow-repeat fs-1"></i>
-            <span class="fs-5">Actualizar</span>
+            <span class="fs-6">Actualizar</span>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-center" (click)="deleteUser(user)" [routerLink]="['/home']">
             <i class="bi bi-trash fs-1"></i>
-            <span class="fs-5">Borrar</span>
+            <span class="fs-6">Borrar</span>
         </div>
     </div>
 </nav>

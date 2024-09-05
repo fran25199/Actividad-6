@@ -18,7 +18,6 @@ export class UsuariosService {
   }
 
   getById (id:string): Promise<Iuser> {
-    console.log("este es el ID "+id);
     return firstValueFrom(this.http.get<Iuser>(`${this.baseUrl}${id}`))
   }
 

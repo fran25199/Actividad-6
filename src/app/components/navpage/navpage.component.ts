@@ -23,7 +23,9 @@ ngOnInit(){
   }
 }
 sendPage(page:string){
+  this.currentPage = Number(page);
     this.page.emit(page);
+
 }
 
 nextPage() {
